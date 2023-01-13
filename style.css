@@ -1,0 +1,6 @@
+.selected {
+  color: violet;
+}
+.selection-missing {
+  color: red;
+}
