@@ -7,10 +7,13 @@ let userFeedback = document.querySelector("#user-feedback");
 let userAnswers = [];
 
 class Question {
-  constructor(id, question, type) {
+  constructor(id, question, kasus, quizType, wordType, timeType) {
     this.id = id;
     this.question = question;
-    this.type = type;
+    this.kasus = kasus;
+    this.quizType = quizType;
+    this.wordType = wordType;
+    this.timeType = timeType;
   }
 
   cleanUp(container) {
