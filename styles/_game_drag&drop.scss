@@ -1,17 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.noChaos {
-  pointer-events: none;
-}
-.selected {
-  color: violet;
-}
-.selection-missing {
-  color: red;
-}
 .drag-box,
 .droppable-item {
   border: solid blueviolet;
@@ -20,10 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.card {
-  display: flex;
-  flex-direction: column;
 }
 .article {
   height: 3rem;
@@ -47,7 +29,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .innerContainer {
   display: flex;
   /* flex-direction: column; */

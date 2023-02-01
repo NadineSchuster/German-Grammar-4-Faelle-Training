@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.noChaos {
+  pointer-events: none;
+}
+
+.selected {
+  color: violet;
+}
+
+.selection-missing {
+  color: red;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.drag-box,
+.droppable-item {
+  border: solid blueviolet;
+  height: 3rem;
+  width: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.article {
+  height: 3rem;
+  width: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.drag-box.drag-hover {
+  border-width: 5px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.main-container-drop-pairs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.droppable-item {
+  height: 3rem;
+  width: 5rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.innerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* flex-direction: column; */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.noun-container-drop-pairs,
+.article-container-drop-pairs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.article-container-drop-pairs {
+  background-color: aquamarine;
+}
+
+.noun-container-drop-pairs {
+  background-color: #f2b86d;
+}
+
+.dropItemsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.drag-box {
+  position: relative;
+}
+
+.delete-button {
+  cursor: pointer;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  color: red;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  /* transform: translate(-50%, 50%); */
+}
+
+.deactivated {
+  pointer-events: none;
+  color: gray;
+  border-color: gray;
+}
+/*# sourceMappingURL=style.css.map */
