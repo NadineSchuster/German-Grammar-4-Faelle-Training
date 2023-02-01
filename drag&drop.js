@@ -1,4 +1,10 @@
-"use static";
+import Question from "./classes/Question.js";
+
+let button = document.querySelector("#button");
+let card = document.querySelector("#exercise-card");
+let counter = document.querySelector("#counter");
+let userFeedback = document.querySelector("#user-feedback");
+let userAnswers = [];
 
 let nounContainer;
 let articleContainer;
