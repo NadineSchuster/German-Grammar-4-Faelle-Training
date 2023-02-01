@@ -30,8 +30,16 @@ class Question {
 }
 
 class QuestionCard extends Question {
-  constructor(id, question, answers, type, userSelection) {
-    super(id, question, type);
+  constructor(
+    id,
+    question,
+    answers,
+    quizType,
+    wordType,
+    timeType,
+    userSelection
+  ) {
+    super(id, question, quizType, wordType, timeType);
     this.answers = answers;
     this.userSelection = userSelection;
   }
@@ -136,22 +144,6 @@ button.addEventListener("click", function (e) {
   }
 });
 
-// if (counter.textContent < exercise.length || counter.textContent == 0) {
-//   console.log("add text");
-//   exercise[counter.textContent].createQuizCard();
-//   counter.textContent++;
-// } else {
-//   console.log("clean up");
-//   c.cleanUp();
-//   counter.textContent = 0;
-// }
-
-let sprüche = [
-  "Schön dass du da bist.",
-  "Schön dich zu sehen.",
-  "Ich freue mich, dass es dich gibt.",
-];
-
 function randomizeExercise(sprüche) {
   for (let i = sprüche.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * i);
@@ -160,6 +152,6 @@ function randomizeExercise(sprüche) {
     sprüche[j] = k;
   }
 
-  //   spruch.textContent = sprüche;
+  // spruch.textContent = sprüche;
   return sprüche;
 }

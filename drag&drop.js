@@ -70,32 +70,31 @@ class DragAndDrop extends Question {
       card.classList.add("main-container-drop-pairs");
     }
     // Get Drag And Drop pairs
-    let a = document.createElement("h3");
-    a.textContent = this.article;
-    a.classList.add("article");
-    articleContainer.appendChild(a);
+    let article = document.createElement("h3");
+    article.textContent = this.article;
+    article.classList.add("article");
+    articleContainer.appendChild(article);
 
-    let q = document.createElement("h3");
-    q.textContent = this.noun;
-    q.setAttribute("draggable", "true");
-    q.classList.add("droppable-item");
-    q.addEventListener("dragstart", this.dragStart);
-    q.style.color = "black";
-    q.id = this.id;
-    dropItemsContainer.appendChild(q);
+    let dropItem = document.createElement("h3");
+    dropItem.textContent = this.noun;
+    dropItem.setAttribute("draggable", "true");
+    dropItem.classList.add("droppable-item");
+    dropItem.addEventListener("dragstart", this.dragStart);
+    dropItem.id = this.id;
+    dropItemsContainer.appendChild(dropItem);
     // shuffle order of answers :)
     // this.answers = randomizeExercise(this.answers);
-    let div = document.createElement("div");
+    let dropContainer = document.createElement("div");
 
-    div.classList.add("drag-box");
-    div.id = this.id;
-    div.classList.add(this.article);
-    div.addEventListener("dragenter", this.dragEnter);
-    div.addEventListener("dragover", this.dragOver);
-    div.addEventListener("dragleave", this.dragLeave);
-    div.addEventListener("drop", this.drop);
+    dropContainer.classList.add("drag-box");
+    dropContainer.id = this.id;
+    dropContainer.classList.add(this.article);
+    dropContainer.addEventListener("dragenter", this.dragEnter);
+    dropContainer.addEventListener("dragover", this.dragOver);
+    dropContainer.addEventListener("dragleave", this.dragLeave);
+    dropContainer.addEventListener("drop", this.drop);
 
-    nounContainer.appendChild(div);
+    nounContainer.appendChild(dropContainer);
   }
 
   // Tutorial: https://www.youtube.com/watch?v=wv7pvH1O5Ho
@@ -123,70 +122,72 @@ class DragAndDrop extends Question {
   }
 
   drop(event) {
-    console.log("dropping...");
     event.preventDefault();
+
     event.target.classList.remove("drag-hover");
-    let container;
-    let dropItem = event.dataTransfer;
 
-    let containerId;
-    if (event.target.firstChild) {
-      container = event.target.parentElement;
-      containerId = container.id;
-    } else {
-      container = event.target;
-      containerId = event.target.id;
-    }
+    if (event.target.classList.contains("drag-box")) {
+      let container = event.target;
 
-    console.log(containerId);
-    let dropItemId = dropItem.getData("text");
-    console.log("drop Item id: ", dropItemId);
-    let containerArticle;
-    let dropItemArticle;
-    let dropItemNoun;
-
-    for (let i = 0; i < dropPairs.length; i++) {
-      // get container article
-      if (dropPairs[i].id == containerId) {
-        containerArticle = dropPairs[i].article;
+      if (container.firstChild) {
+        console.log("deleting...");
+        container.replaceChildren();
       }
 
-      // get user choice
-      if (dropPairs[i].id == dropItemId) {
-        dropItemArticle = dropPairs[i].article;
-        dropItemNoun = dropPairs[i].noun;
+      let dropItem = event.dataTransfer;
+      let containerId = container.id;
+      let dropItemId = dropItem.getData("text");
 
-        console.log(dropItemId);
-        console.log(dropItemNoun);
+      let selections = document.querySelectorAll(".droppable-item");
+      let selection;
+      for (let y = 0; y < selections.length; y++) {
+        if (selections[y].id == dropItemId) {
+          selection = selections[y];
+          selection.classList.add("deactivated");
+        }
       }
+
+      let containerArticle;
+      let dropItemArticle;
+      let dropItemNoun;
+
+      for (let i = 0; i < dropPairs.length; i++) {
+        // get container article
+        if (dropPairs[i].id == containerId) {
+          containerArticle = dropPairs[i].article;
+        }
+
+        // get user choice
+        if (dropPairs[i].id == dropItemId) {
+          dropItemArticle = dropPairs[i].article;
+          dropItemNoun = dropPairs[i].noun;
+        }
+      }
+
+      let containerContent = document.createElement("h2");
+      containerContent.textContent = dropItemNoun;
+      containerContent.id = dropItemId;
+      containerContent.noun = dropItemNoun;
+      containerContent.classList.add("noChaos");
+      container.appendChild(containerContent);
+
+      let isCorrect = containerArticle === dropItemArticle;
+      console.log(isCorrect);
+
+      let deleteButton = document.createElement("div");
+      deleteButton.textContent = "X";
+      deleteButton.classList.add("delete-button");
+      deleteButton.addEventListener("click", function (event) {
+        if (container.firstChild) {
+          console.log("deleting...");
+          container.replaceChildren();
+        }
+        if (selection.classList.contains("deactivated")) {
+          selection.classList.remove("deactivated");
+        }
+      });
+      container.appendChild(deleteButton);
     }
-
-    // console.log(dropItemArticle);
-
-    console.log("Event Target: ", container);
-
-    if (event.target.firstChild) {
-      let parent = event.target.parentNode;
-      console.log("child: ", event.target.firstChild);
-      console.log("parent ", parent);
-
-      // DragAndDrop.cleanUp(event.target);
-      parent.replaceChildren();
-
-      console.log("Now child: ", event.target.firstChild);
-    }
-
-    let containerContent = document.createElement("h2");
-    containerContent.textContent = dropItemNoun;
-    container.appendChild(containerContent);
-
-    // let divNoun = document.createElement("h3");
-    // divNoun.textContent = this.noun;
-    // div.appendChild(divNoun);
-
-    let isCorrect = containerArticle === dropItemArticle;
-    console.log(isCorrect);
-    // event.target.style.backgroundColor = dataFromDroppElement;
   }
 }
 
@@ -210,8 +211,11 @@ let a = new DragAndDrop(
   "Substantiv",
   "Gegenwart"
 );
+
 let dropPairs = [];
+
 dropPairs.push(a, b);
+
 for (let i = 0; i < dropPairs.length; i++) {
   dropPairs[i].createQuizCard();
 }
