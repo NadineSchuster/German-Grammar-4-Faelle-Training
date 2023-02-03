@@ -1,10 +1,6 @@
 import Question from "./classes/Question.js";
 
-let button = document.querySelector("#button");
 let card = document.querySelector("#exercise-card");
-let counter = document.querySelector("#counter");
-let userFeedback = document.querySelector("#user-feedback");
-let userAnswers = [];
 
 let nounContainer;
 let articleContainer;
@@ -32,15 +28,6 @@ class DragAndDrop extends Question {
   static cleanUp(container) {
     console.log("Hello from basic function");
     container.replaceChildren();
-    // let child = container.firstChild;
-
-    // console.log("Last child: ", container.lastChild);
-
-    // if (child) {
-    //   while (child) {
-    //     container.removeChild(container.lastChild);
-    //   }
-    // }
   }
 
   createQuizContainer() {
@@ -107,9 +94,7 @@ class DragAndDrop extends Question {
 
   dragStart(event) {
     console.log("dragging...");
-    // event.dataTransfer.setData("text", event.target.style.color);
 
-    // let b = { id: event.target.id, noun: event.target.noun };
     let b = [this.id];
     event.dataTransfer.setData("text", b);
   }
@@ -135,8 +120,12 @@ class DragAndDrop extends Question {
     if (event.target.classList.contains("drag-box")) {
       let container = event.target;
 
+      let firstChild;
+
       if (container.firstChild) {
         console.log("deleting...");
+        firstChild = container.firstChild.id;
+
         container.replaceChildren();
       }
 
@@ -150,6 +139,9 @@ class DragAndDrop extends Question {
         if (selections[y].id == dropItemId) {
           selection = selections[y];
           selection.classList.add("deactivated");
+        }
+        if (selections[y].id == firstChild) {
+          selections[y].classList.remove("deactivated");
         }
       }
 
