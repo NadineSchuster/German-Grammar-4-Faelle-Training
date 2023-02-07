@@ -1,4 +1,4 @@
-"use strict";
+import Question from "./modules/Question.js";
 
 let button = document.querySelector("#button");
 let card = document.querySelector("#exercise-card");

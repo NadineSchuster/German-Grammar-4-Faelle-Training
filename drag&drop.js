@@ -1,6 +1,9 @@
-import Question from "./classes/Question.js";
+import Question from "./modules/Question.js";
+import ReadDatabase from "./helper/getData.js";
 
 let card = document.querySelector("#exercise-card");
+let button = document.querySelector("#button");
+let counter = document.querySelector("#counter");
 
 let nounContainer;
 let articleContainer;
@@ -54,7 +57,8 @@ class DragAndDrop extends Question {
       this.createQuizContainer();
     }
 
-    console.log(this.quizContainer);
+    // To Do: shuffle order of answers AND shuffle order of everything else
+
     let cardContainsClass = card.classList.contains(
       "main-container-drop-pairs"
     );
@@ -189,31 +193,35 @@ class DragAndDrop extends Question {
   }
 }
 
-let b = new DragAndDrop(
-  4,
-  "Füge den richtigen Artikel hinzu.",
-  "1",
-  "Der",
-  "Hund",
-  "D&D-Einzelpaar",
-  "Substantiv",
-  "Gegenwart"
-);
-let a = new DragAndDrop(
-  5,
-  "Füge den richtigen Artikel hinzu.",
-  "1",
-  "Die",
-  "Katze",
-  "D&D-Einzelpaar",
-  "Substantiv",
-  "Gegenwart"
-);
-
 let dropPairs = [];
 
-dropPairs.push(a, b);
+// let ReadDatabase = function () {
+//   let xhr = new XMLHttpRequest();
+//   xhr.open("GET", "../database.json", true);
+//   xhr.onload = function () {
+//     if (this.status == 200) {
+//       return JSON.parse(this.responseText);
+//     }
+//   };
+//   xhr.send();
+// };
 
-for (let i = 0; i < dropPairs.length; i++) {
-  dropPairs[i].createQuizCard();
-}
+let test = function (dropPairs) {
+  console.log(dropPairs);
+  for (let i = 0; i < dropPairs.length; i++) {
+    dropPairs[i].createQuizCard();
+  }
+};
+
+ReadDatabase.then(
+  function (value) {
+    // console.log(value);
+    test(value);
+    // for (let i = 0; i < dropPairs.length; i++) {
+    //   dropPairs[i].createQuizCard();
+    // }
+  },
+  function (error) {
+    myDisplayer(error);
+  }
+);

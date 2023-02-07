@@ -1,0 +1,64 @@
+{
+  "MiniDragAndDropUnits": [
+    {
+      "id": "4",
+      "question": "Füge den richtigen Artikel hinzu.",
+      "kasus": "1",
+      "article": "Der",
+      "noun": "Hund",
+      "quizType": "D&D-Einzelpaar",
+      "wordType": "Substantiv",
+      "timeType": "Gegenwart"
+    },
+    {
+      "id": "5",
+      "question": "Füge den richtigen Artikel hinzu.",
+      "kasus": "1",
+      "article": "Die",
+      "noun": "Katze",
+      "quizType": "D&D-Einzelpaar",
+      "wordType": "Substantiv",
+      "timeType": "Gegenwart"
+    },
+    {
+      "id": "6",
+      "question": "Füge den richtigen Artikel hinzu.",
+      "kasus": "1",
+      "article": "Das",
+      "noun": "Haus",
+      "quizType": "D&D-Einzelpaar",
+      "wordType": "Substantiv",
+      "timeType": "Gegenwart"
+    },
+    {
+      "id": "7",
+      "question": "Füge den richtigen Artikel hinzu.",
+      "kasus": "1",
+      "article": "Der",
+      "noun": "Baum",
+      "quizType": "D&D-Einzelpaar",
+      "wordType": "Substantiv",
+      "timeType": "Gegenwart"
+    },
+    {
+      "id": "8",
+      "question": "Füge den richtigen Artikel hinzu.",
+      "kasus": "1",
+      "article": "Die",
+      "noun": "Freundschaft",
+      "quizType": "D&D-Einzelpaar",
+      "wordType": "Substantiv",
+      "timeType": "Gegenwart"
+    },
+    {
+      "id": "9",
+      "question": "Füge den richtigen Artikel hinzu.",
+      "kasus": "1",
+      "article": "Das",
+      "noun": "Papier",
+      "quizType": "D&D-Einzelpaar",
+      "wordType": "Substantiv",
+      "timeType": "Gegenwart"
+    }
+  ]
+}
