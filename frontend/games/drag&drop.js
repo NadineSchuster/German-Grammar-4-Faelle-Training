@@ -320,6 +320,7 @@ class DragAndDrop extends Question {
     console.log(userResults);
 
     // saveToDatabase(userResults);
+    saveToDatabase(userResults);
   }
 }
 
@@ -379,28 +380,16 @@ function getDatabaseData() {
 }
 getDatabaseData();
 
-// function saveToDatabase(data) {
-//   fetch(`userResult.json`, {
-//     method: "POST", // or 'PUT'
-//     mode: "cors", // no-cors, *cors, same-origin
-//     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-//     credentials: "same-origin", // include, *same-origin, omit
-
-//     redirect: "follow", // manual, *follow, error
-//     referrerPolicy: "no-referrer",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   })
-//     .then((response) => {
-//       console.log("Success:", response);
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//     });
-// }
+function saveToDatabase(data) {
+  const options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch("http://localhost:5000/api", options);
+}
 
 //  id,
 // question,
