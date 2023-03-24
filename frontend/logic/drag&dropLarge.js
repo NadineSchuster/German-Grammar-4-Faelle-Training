@@ -1,4 +1,4 @@
-import Question from "./modules/Question.js";
+import Question from "../classes/Question.js";
 
 let card = document.querySelector("#exercise-card");
 let button = document.querySelector("#button");
@@ -60,6 +60,7 @@ class DragAndDropLarge extends Question {
     // this.answers = answers;
   }
 }
+
 let articles = ["Das", "Die", "Der"];
 let dropItems = ["Leben", "Gericht", "Buch", "Papier"];
 let createContainers = function () {

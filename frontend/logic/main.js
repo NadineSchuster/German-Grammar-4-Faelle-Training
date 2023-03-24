@@ -1,4 +1,4 @@
-import Question from "./modules/Question.js";
+import Question from "../classes/Question.js";
 
 let button = document.querySelector("#button");
 let card = document.querySelector("#exercise-card");
