@@ -231,7 +231,8 @@ class DragAndDrop extends Question {
     }
   }
 
-  checkResults() {
+  checkResults(e) {
+    e.preventDefault();
     button.classList.add("deactivated");
     let deleteBtns = document.querySelectorAll(".delete-button");
     for (let c = 0; c < deleteBtns.length; c++) {
@@ -374,15 +375,20 @@ function getUserProgress() {
 getGameData();
 getUserProgress();
 
-async function saveUserProgress(userProgress) {
-  const options = {
-    method: "POST",
-    body: JSON.stringify(userProgress),
-    headers: {
-      "Content-Type": "application/json",
-    },
+let saveUserProgress = ({ event }) =>
+  async function (userProgress) {
+    event.preventDefault();
+    const options = {
+      method: "POST",
+      body: JSON.stringify(userProgress),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    let response = await fetch(
+      "http://localhost:5000/saveUserProgress",
+      options
+    );
+    let json = await response.json();
+    console.log(json);
   };
-  let response = await fetch("http://localhost:5000/saveUserProgress", options);
-  let json = await response.json();
-  console.log(json);
-}

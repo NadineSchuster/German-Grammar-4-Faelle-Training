@@ -1,38 +1,38 @@
 [
   {
     "id": "4",
-    "totalTries": 3,
-    "right": 1,
-    "wrong": 2
+    "totalTries": 6,
+    "right": 2,
+    "wrong": 4
   },
   {
     "id": "5",
-    "totalTries": 3,
-    "right": 0,
-    "wrong": 3
+    "totalTries": 6,
+    "right": 1,
+    "wrong": 5
   },
   {
     "id": "6",
-    "totalTries": 3,
-    "right": 1,
-    "wrong": 2
+    "totalTries": 6,
+    "right": 3,
+    "wrong": 3
   },
   {
     "id": "7",
-    "totalTries": 3,
-    "right": 1,
-    "wrong": 2
+    "totalTries": 6,
+    "right": 2,
+    "wrong": 4
   },
   {
     "id": "8",
-    "totalTries": 3,
-    "right": 1,
-    "wrong": 2
+    "totalTries": 6,
+    "right": 3,
+    "wrong": 3
   },
   {
     "id": "9",
-    "totalTries": 3,
+    "totalTries": 6,
     "right": 1,
-    "wrong": 2
+    "wrong": 5
   }
 ]
