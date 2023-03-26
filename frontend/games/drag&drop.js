@@ -375,20 +375,16 @@ function getUserProgress() {
 getGameData();
 getUserProgress();
 
-let saveUserProgress = ({ event }) =>
-  async function (userProgress) {
-    event.preventDefault();
-    const options = {
-      method: "POST",
-      body: JSON.stringify(userProgress),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    let response = await fetch(
-      "http://localhost:5000/saveUserProgress",
-      options
-    );
-    let json = await response.json();
-    console.log(json);
+function saveUserProgress(userProgress) {
+  console.log(e);
+  const options = {
+    method: "POST",
+    body: JSON.stringify(userProgress),
+    headers: {
+      "Content-Type": "application/json",
+    },
   };
+  let response = fetch("http://localhost:5000/saveUserProgress", options);
+  let json = response.json();
+  console.log(json);
+}

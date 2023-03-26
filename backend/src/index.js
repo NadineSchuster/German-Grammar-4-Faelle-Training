@@ -47,10 +47,10 @@ server.post("/saveUserProgress", (request, response) => {
   let d = JSON.stringify(data, "", 2);
   fs.writeFile("../userProgress.json", d, finished);
   console.log(d);
-  response.json({
-    status: "success",
-    content: "Success! Hello from Server ^^",
-  });
+  // response.json({
+  //   status: "success",
+  //   content: "Success! Hello from Server ^^",
+  // });
 });
 function finished(err) {
   console.log(err);
