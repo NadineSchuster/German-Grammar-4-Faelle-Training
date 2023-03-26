@@ -376,7 +376,6 @@ getGameData();
 getUserProgress();
 
 function saveUserProgress(userProgress) {
-  console.log(e);
   const options = {
     method: "POST",
     body: JSON.stringify(userProgress),
