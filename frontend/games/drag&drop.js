@@ -5,6 +5,7 @@ let button = document.querySelector("#button");
 let counter = document.querySelector("#counter");
 
 let userResults = [];
+let dropPairs = [];
 
 class Result {
   constructor(id, totalTries, right, wrong) {
@@ -15,20 +16,11 @@ class Result {
   }
 }
 
-class UserResults {
-  constructor(userId, results) {
-    this.userId = userId;
-    this.results = results; // 1 result is made out of Result
-  }
-}
-
 let nounContainer;
 let articleContainer;
 let quizContainer = false;
 let innerContainer;
 let dropItemsContainer;
-
-let results = [];
 
 class DragAndDrop extends Question {
   constructor(
@@ -319,44 +311,23 @@ class DragAndDrop extends Question {
     }
     console.log(userResults);
 
-    // saveToDatabase(userResults);
-    saveToDatabase(userResults);
+    saveUserProgress(userResults);
   }
 }
 
-// let placeholders = document.querySelectorAll(".drag-box");
-// let isComplete = true;
-
-// for (let i = 0; i < placeholders.length; i++) {
-//   let item = placeholders[i];
-
-//   if (!item.firstElementChild) {
-//     let p = document.createElement("p");
-//     p.textContent = "X";
-//     p.classList.add("noChaos");
-//     item.appendChild(p);
-
-//     isComplete = false;
-//   }
-// }
-// if (isComplete) {
-//   button.classList.remove("deactivated");
-// }
-
-let dropPairs = [];
-
-function getDatabaseData() {
-  fetch(`./database.json`)
+function getGameData() {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch(`http://localhost:5000/getGameData`, options)
     .then((response) => {
       return response.json();
-      // console.log(response);
     })
     .then((response) => {
-      // console.log(response);
-
       let miniDrops = response.MiniDragAndDropUnits;
-      // console.log(miniDrops[0]);
-
       for (let i = 0; i < miniDrops.length; i++) {
         let dragDropItem = new DragAndDrop();
         dragDropItem.id = miniDrops[i].id;
@@ -367,7 +338,6 @@ function getDatabaseData() {
         dragDropItem.quizType = miniDrops[i].quizType;
         dragDropItem.wordType = miniDrops[i].wordType;
         dragDropItem.timeType = miniDrops[i].timeType;
-        // console.log("item: ", dragDropItem.id);
         dropPairs.push(dragDropItem);
       }
       return dropPairs;
@@ -378,24 +348,41 @@ function getDatabaseData() {
       }
     });
 }
-getDatabaseData();
 
-function saveToDatabase(data) {
+function getUserProgress() {
   const options = {
-    method: "POST",
-    body: JSON.stringify(data),
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   };
-  fetch("http://localhost:5000/api", options);
-}
+  fetch(`http://localhost:5000/getUserProgress`, options)
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      let data = response;
 
-//  id,
-// question,
-// kasus,
-// article,
-// noun,
-// quizType,
-// wordType,
-// timeType
+      for (let i = 0; i < data.length; i++) {
+        let result = new Result();
+        result = data[i];
+        userResults.push(result);
+      }
+      console.log("UserRes", userResults);
+    });
+}
+getGameData();
+getUserProgress();
+
+async function saveUserProgress(userProgress) {
+  const options = {
+    method: "POST",
+    body: JSON.stringify(userProgress),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  let response = await fetch("http://localhost:5000/saveUserProgress", options);
+  let json = await response.json();
+  console.log(json);
+}
