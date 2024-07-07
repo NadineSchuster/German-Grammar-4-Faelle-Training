@@ -62,7 +62,7 @@ class DragAndDropLarge extends Question {
 }
 
 let articles = ["Das", "Die", "Der"];
-let dropItems = ["Leben", "Gericht", "Buch", "Papier"];
+let dropItems = ["Leben", "Essen", "Buch", "Papier"];
 let createContainers = function () {
   let upperContainer = document.createElement("div");
   upperContainer.classList.add("upper-container");

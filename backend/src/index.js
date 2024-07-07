@@ -23,6 +23,7 @@ function getGameData(request, response) {
 
   let data = fs.readFileSync("../gameData.json");
   let gameData = JSON.parse(data);
+
   console.log(gameData);
 
   response.send(gameData);
