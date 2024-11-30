@@ -82,9 +82,9 @@ let createMainMenue = function (questions, userResults) {
       console.log(selectedOptions)
 
       if (typeof selectedOptions !== 'undefined' && selectedOptions.length > 0) {
-        startQuizBtn.classList.remove("start-quiz-btn-disabled");
+        startQuizBtn.classList.remove("start-quiz-btn-deactivated");
       } else {
-        startQuizBtn.classList.add("start-quiz-btn-disabled");
+        startQuizBtn.classList.add("start-quiz-btn-deactivated");
       }
     });
   }
@@ -148,7 +148,7 @@ let createMainMenue = function (questions, userResults) {
   let startQuizBtn = document.createElement("button");
   startQuizBtn.textContent = "Start!";
   startQuizBtn.classList.add("start-quiz-btn");
-  startQuizBtn.classList.add("start-quiz-btn-disabled");
+  startQuizBtn.classList.add("start-quiz-btn-deactivated");
   startQuizBtn.addEventListener("click", function () {
     if (typeof selectedOptions !== 'undefined' && selectedOptions.length > 0) {
       console.log("Click Start!")

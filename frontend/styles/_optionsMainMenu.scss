@@ -7,7 +7,6 @@
     background-color: rgb(253, 222, 129);
     overflow: hidden;
 }
-
 .option-item {
     @include flex(center, center, row);
     height: 3rem;
@@ -32,8 +31,9 @@
     left: 50%;
     transform: translate(-50%, 0%);
     margin: 0 auto;
+    cursor: pointer
 }
-.start-quiz-btn-disabled{
+.start-quiz-btn-deactivated{
     background-color: rgb(118, 118, 118);
     pointer-events: none;
 }

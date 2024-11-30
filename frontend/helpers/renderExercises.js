@@ -7,8 +7,15 @@ export default function renderExercises(exerciseRow, mainContainer, questions) {
   shuffle(questions);
   createQuizContainer(mainContainer);
 
-  let counter = 0;
-  for (let i = 0; i < questions.length; i++) {
+  // let counter = 0;
+  // for (let i = 0; i < questions.length; i++) {
+  //   console.log("Next", questions[i]);
+  //   questions[i].createQuizCard(questions, mainContainer, questions);
+  //   // let spliced = exerciseRow.splice(i, 1);
+  //   // practicedExercises.push(spliced[0]);
+  // }
+
+  for (let i = 0; i < 2; i++) {
     console.log("Next", questions[i]);
     questions[i].createQuizCard(questions, mainContainer, questions);
     // let spliced = exerciseRow.splice(i, 1);
