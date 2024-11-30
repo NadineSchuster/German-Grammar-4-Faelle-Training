@@ -1,0 +1,39 @@
+.main-menu-options-container{
+    @include flex(space-around,center,row);
+    position: relative;
+    min-height: 20rem;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: rgb(253, 222, 129);
+    overflow: hidden;
+}
+
+.option-item {
+    @include flex(center, center, row);
+    height: 3rem;
+    width: 5rem;
+    cursor: pointer;
+}
+.selected-option-item {
+    border: yellow;
+    background-color: rgb(255, 217, 0);
+    color: blue;
+    font-weight: 800;
+}
+.start-quiz-btn{
+    height: 3rem;
+    width: 5rem;
+    font-size: larger;
+    background-color: rgb(0, 170, 20);
+    font-weight: 900;
+    // padding: 3rem;
+    position: absolute;
+    bottom: 0rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 0 auto;
+}
+.start-quiz-btn-disabled{
+    background-color: rgb(118, 118, 118);
+    pointer-events: none;
+}

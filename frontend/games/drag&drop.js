@@ -3,6 +3,11 @@ import Question from "../classes/Question.js";
 let card = document.querySelector("#exercise-card");
 let button = document.querySelector("#button");
 let counter = document.querySelector("#counter");
+let buttonNomi = document.querySelector("#button-nominativ");
+let buttonGeni = document.querySelector("#button-genitiv");
+let buttonNext = document.querySelector("#button-next-exercise");
+
+let userFeedback = document.querySelector("#user-feedback");
 
 let userResults = [];
 let dropPairs = [];
@@ -313,6 +318,7 @@ class DragAndDrop extends Question {
     console.log(userResults);
 
     saveUserProgress(userResults);
+    renderExercises();
   }
 }
 
@@ -350,6 +356,61 @@ function getGameData() {
     });
 }
 
+buttonGeni.addEventListener("click", function () {
+  adaptExercises("2");
+});
+
+buttonNomi.addEventListener("click", function () {
+  adaptExercises("1");
+});
+
+let exercises = [];
+let practicedExercises = [];
+let exerciseRow = [];
+
+function adaptExercises(exerciseKind) {
+  exercises = [];
+  exerciseRow = [];
+  console.log("Hello from button genitiv");
+  console.log(dropPairs);
+  dropPairs[0].cleanUp(nounContainer);
+  dropPairs[0].cleanUp(articleContainer);
+  dropPairs[0].cleanUp(dropItemsContainer);
+
+  for (let i = 0; i < dropPairs.length; i++) {
+    let exercise = dropPairs[i];
+    if (exercise.kasus == exerciseKind) {
+      exercises.push(exercise);
+    }
+  }
+
+  exerciseRow = exercises;
+  renderExercises(exercises);
+}
+
+function renderExercises(exerciseRow) {
+  exercises[0].cleanUp(nounContainer);
+  exercises[0].cleanUp(articleContainer);
+  exercises[0].cleanUp(dropItemsContainer);
+
+  shuffle(exerciseRow);
+  console.log(exerciseRow);
+
+  for (let i = 0; i < 2; i++) {
+    if (exerciseRow.length >= 2) {
+      exerciseRow[i].createQuizCard();
+      let spliced = exerciseRow.splice(i, 1);
+      practicedExercises.push(spliced[0]);
+    }
+  }
+  console.log("Practiced Exercises: ", practicedExercises);
+  console.log("Left Exercises: ", exerciseRow);
+}
+
+buttonNext.addEventListener("click", function () {
+  renderExercises(exerciseRow);
+});
+
 function getUserProgress() {
   const options = {
     method: "GET",
@@ -386,4 +447,21 @@ async function saveUserProgress(userProgress) {
   let response = await fetch("http://localhost:5000/saveUserProgress", options);
   let json = await response.json();
   console.log(json);
+}
+
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
 }

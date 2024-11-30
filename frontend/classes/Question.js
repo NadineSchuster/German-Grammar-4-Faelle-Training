@@ -1,4 +1,4 @@
-"use static";
+"use strict";
 
 class Question {
   constructor(id, question, kasus, quizType, wordType, timeType) {

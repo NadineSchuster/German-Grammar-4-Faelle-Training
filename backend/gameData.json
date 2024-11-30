@@ -59,6 +59,16 @@
       "quizType": "D&D-Einzelpaar",
       "wordType": "Substantiv",
       "timeType": "Gegenwart"
+    },
+    {
+      "id": "10",
+      "question": "Füge den richtigen Artikel hinzu.",
+      "kasus": "2",
+      "article": "Des",
+      "noun": "Nilpferds",
+      "quizType": "D&D-Einzelpaar",
+      "wordType": "Substantiv",
+      "timeType": "Gegenwart"
     }
   ]
 }
