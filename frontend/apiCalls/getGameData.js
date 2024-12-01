@@ -15,23 +15,34 @@ export default async function fetchQuestions() {
     
     const data = await response.json();
     console.log("data", data)
-    let dropPairs = [];
-    let miniDrops = data.MiniDragAndDropUnits;
-    for (let i = 0; i < miniDrops.length; i++) {
-      let dragDropItem = new DragAndDrop();
-      dragDropItem.id = miniDrops[i].id;
-      dragDropItem.question = miniDrops[i].question;
-      dragDropItem.kasus = miniDrops[i].kasus;
-      dragDropItem.article = miniDrops[i].article;
-      dragDropItem.noun = miniDrops[i].noun;
-      dragDropItem.quizType = miniDrops[i].quizType;
-      dragDropItem.wordType = miniDrops[i].wordType;
-      dragDropItem.timeType = miniDrops[i].timeType;
-      console.log(dragDropItem);
-      dropPairs.push(dragDropItem);
-    }
-    console.log("hello", dropPairs);
-    return dropPairs;
+
+    let allExercises = [];
+    
+    Object.entries(data).forEach(([exerciseListName, exerciseList]) => {
+      exerciseList.forEach((exercise, index) => {
+        console.log(exercise)
+        allExercises.push(exercise);
+        });
+    });
+
+    return allExercises;
+    // let dropPairs = [];
+    // let miniDrops = data.MiniDragAndDropUnits;
+    // for (let i = 0; i < miniDrops.length; i++) {
+    //   let dragDropItem = new DragAndDrop();
+    //   dragDropItem.id = miniDrops[i].id;
+    //   dragDropItem.question = miniDrops[i].question;
+    //   dragDropItem.kasus = miniDrops[i].kasus;
+    //   dragDropItem.article = miniDrops[i].article;
+    //   dragDropItem.noun = miniDrops[i].noun;
+    //   dragDropItem.quizType = miniDrops[i].quizType;
+    //   dragDropItem.wordType = miniDrops[i].wordType;
+    //   dragDropItem.timeType = miniDrops[i].timeType;
+    //   console.log(dragDropItem);
+    //   dropPairs.push(dragDropItem);
+    // }
+    // console.log("hello", dropPairs);
+    // return dropPairs;
   } catch (error) {
     console.error("Fetching questions failed:", error);
     return [];

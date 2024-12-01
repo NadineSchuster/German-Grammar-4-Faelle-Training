@@ -1,6 +1,7 @@
 import cleanUp from "../helpers/cleanUp.js";
 import adaptExercises from "../helpers/adaptExercises.js";
 import renderExercises from "../helpers/renderExercises.js";
+import pickExercises from "../helpers/pickExercises.js";
 import drop from "../helpers/drop.js";
 
 const mainContainer = document.querySelector("#main-container");
@@ -8,7 +9,7 @@ const mainContainer = document.querySelector("#main-container");
 let buttonNext = document.querySelector("#button-next-exercise");
 let practicedExercises = [];
 
-let createMainMenue = function (questions, userResults) {
+let createMainMenue = function (questions) {
   cleanUp(mainContainer);
   let headLine = document.createElement("h1");
   headLine.textContent = "Übungen 4 Fälle";
@@ -89,45 +90,45 @@ let createMainMenue = function (questions, userResults) {
     });
   }
 
-  // let nominativOption = document.createElement("button");
-  // nominativOption.textContent = "Nominativ";
-  // addButtonFunctionality(nominativOption, nominativOption.textContent)
+  let nominativOption = document.createElement("button");
+  nominativOption.textContent = "Nominativ";
+  addButtonFunctionality(nominativOption, nominativOption.textContent)
 
-  // let genitivOption = document.createElement("button");
-  // genitivOption.textContent = "Genitiv";
-  // addButtonFunctionality(genitivOption, genitivOption.textContent)
+  let genitivOption = document.createElement("button");
+  genitivOption.textContent = "Genitiv";
+  addButtonFunctionality(genitivOption, genitivOption.textContent)
 
-  // let dativOption = document.createElement("button");
-  // dativOption.textContent = "Dativ";
-  // addButtonFunctionality(dativOption, dativOption.textContent)
+  let dativOption = document.createElement("button");
+  dativOption.textContent = "Dativ";
+  addButtonFunctionality(dativOption, dativOption.textContent)
  
-  // let akkusativOption = document.createElement("button");
-  // akkusativOption.textContent = "Akkusativ";
-  // addButtonFunctionality(akkusativOption, akkusativOption.textContent)
+  let akkusativOption = document.createElement("button");
+  akkusativOption.textContent = "Akkusativ";
+  addButtonFunctionality(akkusativOption, akkusativOption.textContent)
 
-  let gegenwartOption = document.createElement("button");
-  gegenwartOption.textContent = "Gegenwart";
-  addButtonFunctionality(gegenwartOption, gegenwartOption.textContent)
+  // let gegenwartOption = document.createElement("button");
+  // gegenwartOption.textContent = "Gegenwart";
+  // addButtonFunctionality(gegenwartOption, gegenwartOption.textContent)
 
-  let ersteVergangenheitOption = document.createElement("button");
-  ersteVergangenheitOption.textContent = "Erste Vergangenheit";
-  addButtonFunctionality(ersteVergangenheitOption, ersteVergangenheitOption.textContent)
+  // let ersteVergangenheitOption = document.createElement("button");
+  // ersteVergangenheitOption.textContent = "Erste Vergangenheit";
+  // addButtonFunctionality(ersteVergangenheitOption, ersteVergangenheitOption.textContent)
 
-  let zweiteVergangenheitOption = document.createElement("button");
-  zweiteVergangenheitOption.textContent = "Zweite Vergangenheit";
-  addButtonFunctionality(zweiteVergangenheitOption, zweiteVergangenheitOption.textContent);
+  // let zweiteVergangenheitOption = document.createElement("button");
+  // zweiteVergangenheitOption.textContent = "Zweite Vergangenheit";
+  // addButtonFunctionality(zweiteVergangenheitOption, zweiteVergangenheitOption.textContent);
   
-  let ersteZukunftOption = document.createElement("button");
-  ersteZukunftOption.textContent = "Erste Zukunft";
-  addButtonFunctionality(ersteZukunftOption, ersteZukunftOption.textContent);
+  // let ersteZukunftOption = document.createElement("button");
+  // ersteZukunftOption.textContent = "Erste Zukunft";
+  // addButtonFunctionality(ersteZukunftOption, ersteZukunftOption.textContent);
   
-  let zweiteZukunftOption = document.createElement("button");
-  zweiteZukunftOption.textContent = "Zweite Zukunft";
-  addButtonFunctionality(zweiteZukunftOption, zweiteZukunftOption.textContent);
+  // let zweiteZukunftOption = document.createElement("button");
+  // zweiteZukunftOption.textContent = "Zweite Zukunft";
+  // addButtonFunctionality(zweiteZukunftOption, zweiteZukunftOption.textContent);
   
-  let vorvergangenheitOption = document.createElement("button");
-  vorvergangenheitOption.textContent = "Vorver- gangenheit";
-  addButtonFunctionality(vorvergangenheitOption, "Vorvergangenheit");
+  // let vorvergangenheitOption = document.createElement("button");
+  // vorvergangenheitOption.textContent = "Vorver- gangenheit";
+  // addButtonFunctionality(vorvergangenheitOption, "Vorvergangenheit");
 
   let artikelOption = document.createElement("button");
   artikelOption.textContent = "Artikel";
@@ -137,9 +138,9 @@ let createMainMenue = function (questions, userResults) {
   substantivOption.textContent = "Substantiv";
   addButtonFunctionality(substantivOption, substantivOption.textContent);
   
-  let verbenOption = document.createElement("button");
-  verbenOption.textContent = "Verben";
-  addButtonFunctionality(verbenOption, verbenOption.textContent);
+  // let verbenOption = document.createElement("button");
+  // verbenOption.textContent = "Verben";
+  // addButtonFunctionality(verbenOption, verbenOption.textContent);
   
   let possessivpronomenOption = document.createElement("button");
   possessivpronomenOption.textContent = "Possessiv- pronomen";
@@ -152,23 +153,25 @@ let createMainMenue = function (questions, userResults) {
   startQuizBtn.addEventListener("click", function () {
     if (typeof selectedOptions !== 'undefined' && selectedOptions.length > 0) {
       console.log("Click Start!")
+      let test = ["4"]
+      pickExercises(test, questions);
     }
   });
   
   optionsContainer.append(
-    // nominativOption,
-    // genitivOption,
-    // dativOption,
-    // akkusativOption,
-    gegenwartOption,
-    ersteVergangenheitOption,
-    zweiteVergangenheitOption,
-    vorvergangenheitOption,
-    ersteZukunftOption,
-    zweiteZukunftOption,
+    nominativOption,
+    genitivOption,
+    dativOption,
+    akkusativOption,
+    // gegenwartOption,
+    // ersteVergangenheitOption,
+    // zweiteVergangenheitOption,
+    // vorvergangenheitOption,
+    // ersteZukunftOption,
+    // zweiteZukunftOption,
     artikelOption,
     substantivOption,
-    verbenOption,
+    // verbenOption,
     possessivpronomenOption,
     startQuizBtn,
   );

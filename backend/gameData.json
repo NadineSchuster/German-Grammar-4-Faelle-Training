@@ -70,5 +70,73 @@
       "wordType": "Substantiv",
       "timeType": "Gegenwart"
     }
+  ],
+  "Cloze": [
+    {
+      "id": "11",
+      "question": "Ich gehe mit [] Hund spazieren.",
+      "kasus": "3",
+      "genus": "Maskulinum",
+      "numerus": "Singular",
+      "article": "Der",
+      "noun": "Hund",
+      "quizType": "Cloze",
+      "wordType": "Artikel",
+      "solution":[
+        {
+          "gap_1": "dem"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "question": "Das ist eine süße Katz[]! Ist das dein[]?",
+      "kasus": "1",
+      "genus": "Femininum",
+      "numerus": "Singular",
+      "article": "Die",
+      "noun": "Katze",
+      "quizType": "Cloze",
+      "wordType": "Possessivpronomen",
+      "solution": [
+        {
+          "gap_1": "e",
+          "gap_2": "e"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "question": "Hier ist mein Schlüssel. Aber ich finde dein[] nicht.",
+      "kasus": "4",
+      "genus": "Maskulinum",
+      "numerus": "Singular",
+      "article": "Der",
+      "noun": "Schlüssel",
+      "quizType": "Cloze",
+      "wordType": "Possessivpronomen",
+      "solution": [
+        {
+          "gap_1": "en"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "question": "Er ist sich [] Folge[] nicht bewusst.",
+      "kasus": "2",
+      "genus": "Femininum",
+      "numerus": "Plural",
+      "article": "die",
+      "noun": "Folgen",
+      "quizType": "Cloze",
+      "wordType": "Artikel",
+      "solution": [
+        {
+          "gap_1": "der",
+          "gap_2": "n"
+        }
+      ]
+    }
   ]
 }

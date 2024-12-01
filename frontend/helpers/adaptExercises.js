@@ -13,7 +13,7 @@ function adaptExercises(exerciseKind, dropPairs) {
       exercises.push(exercise);
     }
   }
-
+  console.log("Adapted exercises:", exercises)
   return exercises;
 }
 
