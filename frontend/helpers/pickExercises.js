@@ -25,4 +25,5 @@ export default function pickExercises(selectedOptions, allExercises) {
     )
 
     console.log(selectedExercises)
+    return selectedExercises;
 }

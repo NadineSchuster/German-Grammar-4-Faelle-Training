@@ -191,4 +191,11 @@
 .start-quiz-btn-deactivated {
   background-color: rgb(118, 118, 118);
   pointer-events: none;
+}
+
+.cloze-inner-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
 }/*# sourceMappingURL=style.css.map */
