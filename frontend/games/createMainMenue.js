@@ -153,8 +153,7 @@ let createMainMenue = function (questions) {
   startQuizBtn.addEventListener("click", function () {
     if (typeof selectedOptions !== 'undefined' && selectedOptions.length > 0) {
       console.log("Click Start!")
-      let test = ["4"]
-      pickExercises(test, questions);
+      pickExercises(selectedOptions, questions);
     }
   });
   

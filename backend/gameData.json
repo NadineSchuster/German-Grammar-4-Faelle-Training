@@ -3,7 +3,7 @@
     {
       "id": "4",
       "question": "Füge den richtigen Artikel hinzu.",
-      "kasus": "1",
+      "kasus": "Nominativ",
       "article": "Der",
       "noun": "Hund",
       "quizType": "D&D-Einzelpaar",
@@ -13,7 +13,7 @@
     {
       "id": "5",
       "question": "Füge den richtigen Artikel hinzu.",
-      "kasus": "1",
+      "kasus": "Nominativ",
       "article": "Die",
       "noun": "Katze",
       "quizType": "D&D-Einzelpaar",
@@ -23,7 +23,7 @@
     {
       "id": "6",
       "question": "Füge den richtigen Artikel hinzu.",
-      "kasus": "1",
+      "kasus": "Nominativ",
       "article": "Das",
       "noun": "Haus",
       "quizType": "D&D-Einzelpaar",
@@ -33,7 +33,7 @@
     {
       "id": "7",
       "question": "Füge den richtigen Artikel hinzu.",
-      "kasus": "1",
+      "kasus": "Nominativ",
       "article": "Der",
       "noun": "Baum",
       "quizType": "D&D-Einzelpaar",
@@ -43,7 +43,7 @@
     {
       "id": "8",
       "question": "Füge den richtigen Artikel hinzu.",
-      "kasus": "1",
+      "kasus": "Nominativ",
       "article": "Die",
       "noun": "Freundschaft",
       "quizType": "D&D-Einzelpaar",
@@ -53,7 +53,7 @@
     {
       "id": "9",
       "question": "Füge den richtigen Artikel hinzu.",
-      "kasus": "1",
+      "kasus": "Nominativ",
       "article": "Das",
       "noun": "Papier",
       "quizType": "D&D-Einzelpaar",
@@ -63,7 +63,7 @@
     {
       "id": "10",
       "question": "Füge den richtigen Artikel hinzu.",
-      "kasus": "2",
+      "kasus": "Genitiv",
       "article": "Des",
       "noun": "Nilpferds",
       "quizType": "D&D-Einzelpaar",
@@ -75,7 +75,7 @@
     {
       "id": "11",
       "question": "Ich gehe mit [] Hund spazieren.",
-      "kasus": "3",
+      "kasus": "Dativ",
       "genus": "Maskulinum",
       "numerus": "Singular",
       "article": "Der",
@@ -91,7 +91,7 @@
     {
       "id": "12",
       "question": "Das ist eine süße Katz[]! Ist das dein[]?",
-      "kasus": "1",
+      "kasus": "Nominativ",
       "genus": "Femininum",
       "numerus": "Singular",
       "article": "Die",
@@ -108,7 +108,7 @@
     {
       "id": "13",
       "question": "Hier ist mein Schlüssel. Aber ich finde dein[] nicht.",
-      "kasus": "4",
+      "kasus": "Akkusativ",
       "genus": "Maskulinum",
       "numerus": "Singular",
       "article": "Der",
@@ -124,7 +124,7 @@
     {
       "id": "14",
       "question": "Er ist sich [] Folge[] nicht bewusst.",
-      "kasus": "2",
+      "kasus": "Genitiv",
       "genus": "Femininum",
       "numerus": "Plural",
       "article": "die",
