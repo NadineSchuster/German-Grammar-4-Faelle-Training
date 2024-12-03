@@ -90,21 +90,29 @@ let createMainMenue = function (questions) {
     });
   }
 
-  let nominativOption = document.createElement("button");
-  nominativOption.textContent = "Nominativ";
-  addButtonFunctionality(nominativOption, nominativOption.textContent)
+  let clozeOption = document.createElement("button");
+  clozeOption.textContent = "Lückentexte";
+  addButtonFunctionality(clozeOption, "Cloze");
 
-  let genitivOption = document.createElement("button");
-  genitivOption.textContent = "Genitiv";
-  addButtonFunctionality(genitivOption, genitivOption.textContent)
+  let assignCorrectlyOption = document.createElement("button");
+  assignCorrectlyOption.textContent = "Die 4 Fälle zuordnen";
+  addButtonFunctionality(assignCorrectlyOption, "AssignCorrectly");
 
-  let dativOption = document.createElement("button");
-  dativOption.textContent = "Dativ";
-  addButtonFunctionality(dativOption, dativOption.textContent)
+  // let nominativOption = document.createElement("button");
+  // nominativOption.textContent = "Nominativ";
+  // addButtonFunctionality(nominativOption, nominativOption.textContent)
+
+  // let genitivOption = document.createElement("button");
+  // genitivOption.textContent = "Genitiv";
+  // addButtonFunctionality(genitivOption, genitivOption.textContent)
+
+  // let dativOption = document.createElement("button");
+  // dativOption.textContent = "Dativ";
+  // addButtonFunctionality(dativOption, dativOption.textContent)
  
-  let akkusativOption = document.createElement("button");
-  akkusativOption.textContent = "Akkusativ";
-  addButtonFunctionality(akkusativOption, akkusativOption.textContent)
+  // let akkusativOption = document.createElement("button");
+  // akkusativOption.textContent = "Akkusativ";
+  // addButtonFunctionality(akkusativOption, akkusativOption.textContent)
 
   // let gegenwartOption = document.createElement("button");
   // gegenwartOption.textContent = "Gegenwart";
@@ -130,21 +138,21 @@ let createMainMenue = function (questions) {
   // vorvergangenheitOption.textContent = "Vorver- gangenheit";
   // addButtonFunctionality(vorvergangenheitOption, "Vorvergangenheit");
 
-  let artikelOption = document.createElement("button");
-  artikelOption.textContent = "Artikel";
-  addButtonFunctionality(artikelOption, artikelOption.textContent);
+  // let artikelOption = document.createElement("button");
+  // artikelOption.textContent = "Artikel";
+  // addButtonFunctionality(artikelOption, artikelOption.textContent);
 
-  let substantivOption = document.createElement("button");
-  substantivOption.textContent = "Substantiv";
-  addButtonFunctionality(substantivOption, substantivOption.textContent);
+  // let substantivOption = document.createElement("button");
+  // substantivOption.textContent = "Substantiv";
+  // addButtonFunctionality(substantivOption, substantivOption.textContent);
   
   // let verbenOption = document.createElement("button");
   // verbenOption.textContent = "Verben";
   // addButtonFunctionality(verbenOption, verbenOption.textContent);
   
-  let possessivpronomenOption = document.createElement("button");
-  possessivpronomenOption.textContent = "Possessiv- pronomen";
-  addButtonFunctionality(possessivpronomenOption, "Possessivpronomen");
+  // let possessivpronomenOption = document.createElement("button");
+  // possessivpronomenOption.textContent = "Possessiv- pronomen";
+  // addButtonFunctionality(possessivpronomenOption, "Possessivpronomen");
 
   let startQuizBtn = document.createElement("button");
   startQuizBtn.textContent = "Start!";
@@ -159,20 +167,22 @@ let createMainMenue = function (questions) {
   });
   
   optionsContainer.append(
-    nominativOption,
-    genitivOption,
-    dativOption,
-    akkusativOption,
+    // nominativOption,
+    // genitivOption,
+    // dativOption,
+    // akkusativOption,
     // gegenwartOption,
     // ersteVergangenheitOption,
     // zweiteVergangenheitOption,
     // vorvergangenheitOption,
     // ersteZukunftOption,
     // zweiteZukunftOption,
-    artikelOption,
-    substantivOption,
+    // artikelOption,
+    // substantivOption,
     // verbenOption,
-    possessivpronomenOption,
+    // possessivpronomenOption,
+    clozeOption,
+    assignCorrectlyOption,
     startQuizBtn,
   );
 };

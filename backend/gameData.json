@@ -138,5 +138,33 @@
         }
       ]
     }
+  ],
+  "AssignCorrectly":[
+    {
+      "id": "15",
+      "instruction": "Welche Wörter gehören zum Nominativ? Finde den Nominativ und klicke alle Wörter an, die im Nominativ stehen.",
+      "question": "Der Löwe schläft im Schatten.",
+      "kasus": "Nominativ",
+      "quizType": "AssignCorrectly",
+      "solution": [
+        {
+          "Nominativ": "Der Löwe",
+          "Dativ": "im Schatten"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "instruction": "Welche Wörter gehören zum Nominativ? Finde den Nominativ und klicke alle Wörter an, die im Nominativ stehen.",
+      "question": "Das Fahrrad ist alt, aber es fährt noch gut.",
+      "kasus": "Nominativ",
+      "quizType": "AssignCorrectly",
+      "solution": [
+        {
+          "Nominativ": "Das Fahrrad",
+          "Test": "es fährt"
+        }
+      ]
+    }
   ]
 }
